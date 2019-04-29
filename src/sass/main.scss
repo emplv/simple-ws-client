@@ -1,0 +1,232 @@
+@import "./variables.scss";
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+  font-size: 14px;
+  background: #eaeaea;
+  color: #757575;
+}
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.disabled {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.grayBox {
+  background: #fffbfb;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid #cccccc;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.loginBox {
+  width: 260px;
+
+  @media screen and (max-width: 300px) {
+    width: 100%;
+  }
+
+  &-form {
+    text-align: center;
+
+    input {
+      height: 30px;
+      padding: 3px 5px;
+      background: rgba(255, 255, 255, 0.8);
+      border: solid 1px #b9b9b9;
+      outline: none;
+      border-radius: 5px;
+      width: 100%;
+      display: block;
+    }
+
+    button {
+      height: 30px;
+      margin-top: 10px;
+      border: solid 1px $greenText;
+      width: 60%;
+      background: $green;
+      border-radius: 5px;
+      color: $greenText;
+      transition: background 0.2s ease;
+      cursor: pointer;
+
+      &:hover {
+        background: $greenHover;
+      }
+    }
+  }
+
+  &-error {
+    margin-top: 10px;
+    background: rgba(255, 99, 71, 0.2);
+    border: 1px solid rgba(255, 99, 71, 0.5);
+    color: #ff2700;
+    padding: 5px;
+    font-size: 12px;
+    border-radius: 5px;
+  }
+}
+
+.chatWindow {
+  width: 80vw;
+  max-width: 600px;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+  position: relative;
+  overflow: hidden;
+
+  @media screen and (max-width: 500px) {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+
+  &-topbar {
+    background: #eaeaea;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    padding: 12px 20px;
+    border-bottom: 1px solid #ccc;
+
+    .close {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      top: 0;
+      right: 0;
+      cursor: pointer;
+
+      &::before,
+      &::after {
+        content: "";
+        display: block;
+        width: 2px;
+        height: 20px;
+        background: #b6b6b6;
+        transform: rotate(45deg);
+        top: 9px;
+        left: 19px;
+        position: absolute;
+        border-radius: 2px;
+      }
+      &::after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  &-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-bottom: 10px;
+    overflow: hidden;
+    max-height: calc(100% - 100px);
+    flex-direction: column;
+
+    .chatWindow-messages {
+      width: 100%;
+      flex-grow: 1;
+      overflow-y: scroll;
+
+      &-item {
+        margin-bottom: 6px;
+        display: flex;
+
+        .date {
+          margin-right: 10px;
+          color: #b7b7b7;
+          align-self: flex-start;
+          min-width: 44px;
+          flex-shrink: 0;
+        }
+
+        .message {
+          flex-grow: 1;
+
+          &.server {
+            color: #b7b7b7;
+            font-style: italic;
+          }
+
+          .username {
+            font-weight: 700;
+
+            &.own {
+              color: #42ce9c;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &-form {
+    flex-shrink: 0;
+    height: 100px;
+    min-height: 100px;
+    padding-top: 10px;
+    border-top: 1px solid #757575;
+
+    .chatWindow-username {
+      color: #c3c3c3;
+      margin-bottom: 10px;
+      height: 16px;
+
+      span {
+        color: #42ce9c;
+        font-weight: 700;
+      }
+    }
+
+    textarea {
+      height: 64px;
+      resize: none;
+      width: calc(80% - 10px);
+      display: inline-block;
+      margin-right: 10px;
+      vertical-align: top;
+      background: rgba(255, 255, 255, 0.8);
+      border: solid 1px #b9b9b9;
+      outline: none;
+      border-radius: 5px;
+      padding: 6px;
+    }
+
+    button {
+      height: 64px;
+      border: solid 1px $greenText;
+      width: 20%;
+      background: $green;
+      border-radius: 5px;
+      color: $greenText;
+      transition: background 0.2s ease;
+      cursor: pointer;
+
+      &:hover {
+        background: $greenHover;
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "target": "es2016",
+    "module": "commonjs",
+    "sourceMap": true,
+    "rootDir": "./src",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["dom", "es2017"],
+    "jsx": "react"
+  }
+}
