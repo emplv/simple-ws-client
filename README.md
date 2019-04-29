@@ -4,9 +4,9 @@ Uses (Sass)[https://sass-lang.com/install]
 
 ## Commands
 
-`npm run build` - create production bundle
-`npm run watch` - create development bundle, watch for changes
-`npm run sass` - compile scss to css
+`npm run build` - create production bundle  
+`npm run watch` - create development bundle, watch for changes  
+`npm run sass` - compile scss to css  
 `npm run sass-watch` - compile scss to css, adn watch for changes
 
 ## Server
