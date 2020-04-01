@@ -1,6 +1,6 @@
 # Simple WebSockets chat client
 
-Uses (Sass)[https://sass-lang.com/install]
+Uses [Sass](https://sass-lang.com/install)
 
 ## Commands
 
@@ -11,5 +11,5 @@ Uses (Sass)[https://sass-lang.com/install]
 
 ## Server
 
-Made as a client for (simple-ws)[https://github.com/plavenieks/simple-ws] server.
+Made as a client for [simple-ws](https://github.com/plavenieks/simple-ws) server.
 Server repo includes this as a submodule.
